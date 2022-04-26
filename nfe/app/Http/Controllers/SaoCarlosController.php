@@ -58,7 +58,7 @@ class SaoCarlosController extends BaseController
         $context = stream_context_create($opts);
         $result = file_get_contents($url, false,
         $context);
-        echo $result;
+        return $result;
     }
 
     public function cancelar(request $request)
@@ -90,7 +90,7 @@ class SaoCarlosController extends BaseController
         $context = stream_context_create($opts);
         $result = file_get_contents($url, false,
         $context);
-        echo $result;
+        return $result;
     }
 
     public function emissao(request $request)
@@ -169,7 +169,7 @@ class SaoCarlosController extends BaseController
         $context = stream_context_create($opts);
         $result = file_get_contents($url, false,
         $context);
-        echo $result;
+        return $result;
     }
 
     public function simular()
@@ -248,7 +248,7 @@ class SaoCarlosController extends BaseController
         $context = stream_context_create($opts);
         $result = file_get_contents($url, false,
         $context);
-        echo $result;
+        return $result;
     }
 
 }
