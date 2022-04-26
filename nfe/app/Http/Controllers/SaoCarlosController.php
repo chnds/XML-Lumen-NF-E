@@ -36,8 +36,8 @@ class SaoCarlosController extends BaseController
         $xml = <<<EOT
         <?xml version="1.0"?>
         <consulta>
-            <inscricaoMunicipal>$request->inscricaoMunicipal</inscricaoMunicipal> 
-            <codigoVerificacao>$request->inscricaoMunicipal</codigoVerificacao>
+            <inscricaoMunicipal>62840</inscricaoMunicipal> 
+            <codigoVerificacao>$request->codigoVerificacao</codigoVerificacao>
         </consulta>
         EOT;
 
@@ -101,102 +101,53 @@ class SaoCarlosController extends BaseController
         <?xml version="1.0"?>
         <nfe>
             <notaFiscal>
-            <dadosPrestador>
-            <dataEmissao>01/01/2019</dataEmissao>
-            <im>62840</im>
-            <numeroRps>0009</numeroRps>
-            </dadosPrestador>
-            <dadosServico>
-            <bairro>CENTRO</bairro>
-            <cep>01378-056</cep>
-            <cidade>SAO BERNARDO</cidade>
-            <complemento>TERREO</complemento>
-            <logradouro>Rua Continental</logradouro>
-            <numero>345</numero>
-            <pais>BRASIL</pais>
-            <uf>SP</uf>
-            </dadosServico>
-            <dadosTomador>
-            <bairro>Vila Vermelha</bairro>
-            <cep>04218-048</cep>
-            <cidade>SAO PAULO</cidade>
-            <complemento>Sala 23A</complemento>
-            <documento>18023609807</documento>
-            <email>teste@teste.com.br</email>
-            <ie>ISENTO</ie>
-            <logradouro>Rua Ostenda</logradouro>
-            <nomeTomador>NOME TOMADOR</nomeTomador>
-            <numero>93</numero>
-            <pais>BRASIL</pais>
-            <tipoDoc>J</tipoDoc>
-            <uf>SP</uf>
-            </dadosTomador>
-            <detalheServico>
-            <cofins>0.00</cofins>
-            <csll>0.00</csll>
-            <deducaoMaterial>0.00</deducaoMaterial>
-            <descontoIncondicional>0</descontoIncondicional>
-            <inss>0.00</inss>
-            <ir>0.00</ir>
-            <issRetido>0.00</issRetido>
-            <item>
-            <aliquota>0.0</aliquota>
-            <codigo>0702</codigo>
-            <descricao>Locacao de galpao p funilaria</descricao>
-            <valor>100</valor>
-            </item>
-            <obs>Servicos realizados inloco.</obs>
-            <pisPasep>0.00</pisPasep>
-            </detalheServico>
-            </notaFiscal>
-            <notaFiscal>
-            <dadosPrestador>
-            <dataEmissao>02/08/2019</dataEmissao>
-            <im>00008</im>
-            <numeroRps>0009</numeroRps>
-            </dadosPrestador>
-            <dadosServico>
-            <bairro>CENTRO</bairro>
-            <cep>01378-056</cep>
-            <cidade>SAO BERNARDO</cidade>
-            <complemento>TERREO</complemento>
-            <logradouro>Rua Continental</logradouro>
-            <numero>345</numero>
-            <pais>BRASIL</pais>
-            <uf>SP</uf>
-            </dadosServico>
-            <dadosTomador>
-            <bairro>Vila Vermelha</bairro>
-            <cep>04218-048</cep>
-            <cidade>SAO PAULO</cidade>
-            <complemento>Sala 23A</complemento>
-            <documento>18023609807</documento>
-            <email>teste@teste.com.br</email>
-            <ie>ISENTO</ie>
-            <logradouro>Rua Ostenda</logradouro>
-            <nomeTomador>NOME TOMADOR</nomeTomador>
-            <numero>93</numero>
-            <pais>BRASIL</pais>
-            <tipoDoc>J</tipoDoc>
-            <uf>SP</uf>
-            </dadosTomador>
-            <detalheServico>
-            <cofins>0.00</cofins>
-            <csll>0.00</csll>
-            <deducaoMaterial>0.00</deducaoMaterial>
-            <descontoIncondicional>0</descontoIncondicional>
-            <inss>0.00</inss>
-            <ir>0.00</ir>
-            <issRetido>0.00</issRetido>
-            <item>
-            <aliquota>0.0</aliquota>
-            <codigo>0702</codigo>
-            <descricao>Locacao de galpao p funilaria</descricao>
-            <valor>100</valor>
-            </item>
-            <obs>Servicos realizados inloco.</obs>
-            <pisPasep>0.00</pisPasep>
-            </detalheServico>
+                <dadosPrestador>
+                <dataEmissao>$request->dataEmissao</dataEmissao>
+                    <im>62840</im> 
+                    <numeroRps>$request->numeroRps</numeroRps>
+                </dadosPrestador>
+                <dadosServico>
+                    <bairro>$request->bairroServico</bairro>
+                    <cep>$request->cep</cep>
+                    <cidade>$request->cidade</cidade>
+                    <complemento>$request->complemento</complemento>
+                    <logradouro>$request->logradouro</logradouro>
+                    <numero>$request->numero</numero>
+                    <pais>$request->pais</pais>
+                    <uf>$request->uf</uf>
+                </dadosServico>
+                <dadosTomador>
+                    <bairro>$request->bairroTomador</bairro>
+                    <cep>$request->cepTomador</cep>
+                    <cidade>$request->codigoCidadeTomador</cidade>
+                    <complemento>$request->complementoTomador</complemento>
+                    <documento>18023609807</documento>
+                    <email>$request->emailTomador</email>
+                    <ie>$request->ieTomador</ie>
+                    <logradouro>$request->ladrodouroTomador</logradouro>
+                    <nomeTomador>$request->nomeTomador</nomeTomador>
+                    <numero>$request->numeroTomador</numero>
+                    <pais>$request->paisTomador</pais>
+                    <tipoDoc>$request->tipoDocTomador</tipoDoc>
+                    <uf>$request->ufTomador</uf>
+                </dadosTomador>
+                <detalheServico>
+                    <cofins>$request->cofins</cofins>
+                    <csll>$request->csll</csll>
+                    <deducaoMaterial>$request->deducaoMaterial</deducaoMaterial>
+                    <descontoIncondicional>$request->descontoIncondicional</descontoIncondicional>
+                    <inss>$request->inss</inss>
+                    <ir>$request->ir</ir>
+                    <issRetido>$request->issRetido</issRetido>
+                    <item>
+                    <aliquota>$request->aliquotaSimplesNacional</aliquota>
+                    <codigo>$request->codigo</codigo>
+                    <descricao>Locacao de galpao p funilaria</descricao>
+                    <valor>$request->valor</valor>
+                    </item>
+                    <obs>$request->obs</obs>
+                    <pisPasep>$request->pisPasep</pisPasep>
+                </detalheServico>
             </notaFiscal>
         </nfe>
         EOT;
@@ -229,102 +180,53 @@ class SaoCarlosController extends BaseController
         <?xml version="1.0"?>
         <nfe>
             <notaFiscal>
-            <dadosPrestador>
-            <dataEmissao>01/01/2019</dataEmissao>
-            <im>00008</im>
-            <numeroRps>0009</numeroRps>
-            </dadosPrestador>
-            <dadosServico>
-            <bairro>CENTRO</bairro>
-            <cep>01378-056</cep>
-            <cidade>SAO BERNARDO</cidade>
-            <complemento>TERREO</complemento>
-            <logradouro>Rua Continental</logradouro>
-            <numero>345</numero>
-            <pais>BRASIL</pais>
-            <uf>SP</uf>
-            </dadosServico>
-            <dadosTomador>
-            <bairro>Vila Vermelha</bairro>
-            <cep>04218-048</cep>
-            <cidade>SAO PAULO</cidade>
-            <complemento>Sala 23A</complemento>
-            <documento>18023609807</documento>
-            <email>teste@teste.com.br</email>
-            <ie>ISENTO</ie>
-            <logradouro>Rua Ostenda</logradouro>
-            <nomeTomador>NOME TOMADOR</nomeTomador>
-            <numero>93</numero>
-            <pais>BRASIL</pais>
-            <tipoDoc>J</tipoDoc>
-            <uf>SP</uf>
-            </dadosTomador>
-            <detalheServico>
-            <cofins>0.00</cofins>
-            <csll>0.00</csll>
-            <deducaoMaterial>0.00</deducaoMaterial>
-            <descontoIncondicional>0</descontoIncondicional>
-            <inss>0.00</inss>
-            <ir>0.00</ir>
-            <issRetido>0.00</issRetido>
-            <item>
-            <aliquota>0.0</aliquota>
-            <codigo>0702</codigo>
-            <descricao>Locacao de galpao p funilaria</descricao>
-            <valor>100</valor>
-            </item>
-            <obs>Servicos realizados inloco.</obs>
-            <pisPasep>0.00</pisPasep>
-            </detalheServico>
-            </notaFiscal>
-            <notaFiscal>
-            <dadosPrestador>
-            <dataEmissao>02/08/2019</dataEmissao>
-            <im>00008</im>
-            <numeroRps>0009</numeroRps>
-            </dadosPrestador>
-            <dadosServico>
-            <bairro>CENTRO</bairro>
-            <cep>01378-056</cep>
-            <cidade>SAO BERNARDO</cidade>
-            <complemento>TERREO</complemento>
-            <logradouro>Rua Continental</logradouro>
-            <numero>345</numero>
-            <pais>BRASIL</pais>
-            <uf>SP</uf>
-            </dadosServico>
-            <dadosTomador>
-            <bairro>Vila Vermelha</bairro>
-            <cep>04218-048</cep>
-            <cidade>SAO PAULO</cidade>
-            <complemento>Sala 23A</complemento>
-            <documento>18023609807</documento>
-            <email>teste@teste.com.br</email>
-            <ie>ISENTO</ie>
-            <logradouro>Rua Ostenda</logradouro>
-            <nomeTomador>NOME TOMADOR</nomeTomador>
-            <numero>93</numero>
-            <pais>BRASIL</pais>
-            <tipoDoc>J</tipoDoc>
-            <uf>SP</uf>
-            </dadosTomador>
-            <detalheServico>
-            <cofins>0.00</cofins>
-            <csll>0.00</csll>
-            <deducaoMaterial>0.00</deducaoMaterial>
-            <descontoIncondicional>0</descontoIncondicional>
-            <inss>0.00</inss>
-            <ir>0.00</ir>
-            <issRetido>0.00</issRetido>
-            <item>
-            <aliquota>0.0</aliquota>
-            <codigo>0702</codigo>
-            <descricao>Locacao de galpao p funilaria</descricao>
-            <valor>100</valor>
-            </item>
-            <obs>Servicos realizados inloco.</obs>
-            <pisPasep>0.00</pisPasep>
-            </detalheServico>
+                <dadosPrestador>
+                    <dataEmissao>01/01/2019</dataEmissao>
+                    <im>00008</im>
+                    <numeroRps>0009</numeroRps>
+                </dadosPrestador>
+                <dadosServico>
+                    <bairro>CENTRO</bairro>
+                    <cep>01378-056</cep>
+                    <cidade>SAO BERNARDO</cidade>
+                    <complemento>TERREO</complemento>
+                    <logradouro>Rua Continental</logradouro>
+                    <numero>345</numero>
+                    <pais>BRASIL</pais>
+                    <uf>SP</uf>
+                </dadosServico>
+                <dadosTomador>
+                    <bairro>Vila Vermelha</bairro>
+                    <cep>04218-048</cep>
+                    <cidade>SAO PAULO</cidade>
+                    <complemento>Sala 23A</complemento>
+                    <documento>18023609807</documento>
+                    <email>teste@teste.com.br</email>
+                    <ie>ISENTO</ie>
+                    <logradouro>Rua Ostenda</logradouro>
+                    <nomeTomador>NOME TOMADOR</nomeTomador>
+                    <numero>93</numero>
+                    <pais>BRASIL</pais>
+                    <tipoDoc>J</tipoDoc>
+                    <uf>SP</uf>
+                </dadosTomador>
+                <detalheServico>
+                    <cofins>0.00</cofins>
+                    <csll>0.00</csll>
+                    <deducaoMaterial>0.00</deducaoMaterial>
+                    <descontoIncondicional>0</descontoIncondicional>
+                    <inss>0.00</inss>
+                    <ir>0.00</ir>
+                    <issRetido>0.00</issRetido>
+                    <item>
+                    <aliquota>0.0</aliquota>
+                    <codigo>0702</codigo>
+                    <descricao>Locacao de galpao p funilaria</descricao>
+                    <valor>100</valor>
+                    </item>
+                    <obs>Servicos realizados inloco.</obs>
+                    <pisPasep>0.00</pisPasep>
+                </detalheServico>
             </notaFiscal>
         </nfe>
         EOT;
@@ -348,7 +250,5 @@ class SaoCarlosController extends BaseController
         $context);
         echo $result;
     }
-
-
 
 }
